@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+span{
+    display: inline-block;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+hr{
+    color: #5f676f55;
+}
+body{
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: poppins;
+}
+.d-none{
+    display: none;
+}
+:root{
+    --shadow-1 : 0px 0px 10px rgb(0, 0, 0 , .1); 
+    --shadow-2 : 0px 0px 10px rgb(0, 0, 0 , .2); 
+}
+.facebook-page{
+    height: auto;
+    width: 600px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: var(--shadow-1);
+}
+.facebook-page .facebook-page-hader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+    padding-bottom: 5px;
+}
+
+.facebook-page .facebook-page-hader .facebook-profile-image{
+    width: 10%;
+}
+.facebook-page .facebook-page-hader .facebook-profile-image img{
+    width: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.facebook-page .facebook-page-hader .facebook-name{
+    text-align: left;
+    width: 80%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.facebook-page .facebook-page-hader .facebook-name strong{
+    margin-bottom: 2px;
+    font-size: 18px;
+    color: #050505;
+}
+.facebook-page .facebook-page-hader .facebook-name span{
+    font-size: 12px;
+    font-weight: 300;
+    color: #5f676f;
+}
+.facebook-page .facebook-page-hader .facebook-edit-menu{
+    width: 10%;
+    text-align: center;
+    position: relative;
+}
+.facebook-page .facebook-page-hader .facebook-edit-menu i{
+    cursor: pointer;
+    font-size: 20px;
+    color: #5f676f;
+}
+.facebook-page .facebook-page-hader .facebook-edit-menu .menu-bar {
+	width: 300px;
+	height: auto;
+	background-color: #fff;
+	box-shadow: var(--shadow-2);
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	border-radius: 5px;
+}
+.facebook-page .facebook-page-hader .facebook-edit-menu .menu-bar ul{
+    text-align: left;
+}
+.facebook-page .facebook-page-hader .facebook-edit-menu .menu-bar ul li{
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #1a2020;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+.facebook-page .facebook-page-hader .facebook-edit-menu .menu-bar ul li:hover{
+    background-color: #e9e9e9c0;
+   
+}
+.facebook-page .facebook-page-hader .facebook-edit-menu .menu-bar ul li span{
+    margin-left: 10px;
+    font-weight: 300;
+}
+.facebook-page .facebook-page-hader .facebook-edit-menu .menu-bar ul li i{
+    font-size: 18px;
+}
+
+
+.facebook-page .facebook-body{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.facebook-page .facebook-body span{
+    color: #2a2d2f;
+}
+
+.facebook-page .like-result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.facebook-page .like-result .react{
+    width: 12%;
+    display: flex;
+    align-items: center;
+}
+.facebook-page .like-result .react span{
+    font-size: 15px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 2px solid #ffffff;
+    margin: -3px;
+}
+.facebook-page .like-result .react span:nth-child(1){
+    background-color: #e51743;
+}
+.facebook-page .like-result .react span:nth-child(2){
+    background-color: #fac451;
+}
+.facebook-page .like-result .react span:nth-child(3){
+    background-color: #e51743;
+}
+.facebook-page .like-result .react-result{
+    width: 65%;
+    color: #5f676f;
+}
+.facebook-page .like-result .comment-result{
+   width: 20%; 
+   color: #5f676f;
+}
+
+
+
+.facebook-page .facebook-react{
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+}
+.facebook-page .facebook-react .like{
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #5f676f;
+}
+
+
+
+/* Edit Popup */
+.edit-popup{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-80px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease-in-out;
+}
+.edit-popup.active{
+    transform: translateY(0px);
+    opacity: 1;
+    pointer-events: auto;
+}
+.edit-popup .edit-popup-content {
+    width: 500px;
+    background-color: #fff;
+    box-shadow: var(--shadow-2);
+    border-radius: 5px;
+}
+.edit-popup .edit-popup-content .edit-popup-hader{
+    display: flex;
+    padding: 30px 20px;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    border-bottom: 1px solid #e9e9e9;
+}
+.edit-popup .edit-popup-content .edit-popup-hader span{
+    width: 90%;
+    text-align: center;
+    font-weight:600;
+    font-size: 20px;
+}
+.edit-popup .edit-popup-content .edit-popup-hader .button{
+    width: 10%;
+    text-align: right;
+}
+.edit-popup .edit-popup-content .edit-popup-hader .button button{
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.edit-popup .edit-popup-content .edit-popup-body{
+    padding: 20px;
+    height: auto;
+}
+.edit-popup .edit-popup-content .edit-popup-body #editePageCode{
+    width: 100%;
+    height: auto;
+    height: auto;
+    font-size: 15px;
+    padding: 10px;
+    font-weight: 300;
+    font-family: poppins;
+    border: none;
+    outline: none;
+}
+.edit-popup .edit-popup-content .edit-popup-body #editePageCode:focus{
+   border: none;
+
+}
+.edit-popup .edit-popup-content .edit-popup-footer{}
+.edit-popup .edit-popup-content .edit-popup-footer .save-button{
+    padding: 20px;
+}
+.edit-popup .edit-popup-content .edit-popup-footer .save-button button{
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    background-color: #e4e6eb;
+    color: #bcc0c4;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+
+
+/* Custom Alert */
+.custom-alert{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(30px);
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+.custom-alert.active{
+    transform: translateY(0px);
+    opacity: 1;
+    pointer-events: auto;
+}
+.custom-alert .custom-alert-content{
+    background-color: #fff;
+    box-shadow: var(--shadow-2);
+    width: 400px;
+    border-radius: 7px;
+}
+.custom-alert .custom-alert-content .custom-alert-hader{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.custom-alert .custom-alert-content .custom-alert-hader span{}
+.custom-alert .custom-alert-content .custom-alert-hader .alert-button{}
+.custom-alert .custom-alert-content .custom-alert-hader .alert-button button{
+    height: 35px;
+    width: 35px;
+    background-color: #e9e9e9;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+.custom-alert .custom-alert-content .custom-alert-body{
+    
+}
+.custom-alert .custom-alert-content .custom-alert-body p{
+    
+    padding: 10px;
+    font-size: 13px;
+    color: #554b4b;
+    margin-top: 10px;
+}
+.custom-alert .custom-alert-content .custom-alert-footer{
+    margin: 20px;
+    text-align: right;
+}
+.custom-alert .custom-alert-content .custom-alert-footer button {
+	padding: 9px 40px;
+	border: none;
+	border-radius: 5px;
+	font-size: 15px;
+    cursor: pointer;
+}
+.custom-alert .custom-alert-content .custom-alert-footer button:nth-child(1){
+    background-color: inherit !important;
+    color: #1b74e4;
+}
+.custom-alert .custom-alert-content .custom-alert-footer button:nth-child(2){
+    background-color: #1b74e4;
+    color: white;
+}
